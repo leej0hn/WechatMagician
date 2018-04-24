@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress AndroidElementNotAllowed -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_category_interface">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="settings_interface_hide_icon"
+            android:summary="@string/prompt_need_reboot"
+            android:title="@string/pref_toggle_hide_icon" />
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/pref_option_module_language_entries"
+            android:entryValues="@array/pref_option_module_language_entry_values"
+            android:key="settings_module_language"
+            android:title="@string/pref_option_module_language" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_chatting">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="settings_chatting_chatroom_hider"
+            android:summary="@string/pref_toggle_chatroom_hider_summary"
+            android:title="@string/pref_toggle_chatroom_hider" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="settings_chatting_recall"
+            android:title="@string/pref_toggle_prevent_recall" />
+        <EditTextPreference
+            android:defaultValue="@string/prompt_message_recall"
+            android:dependency="settings_chatting_recall"
+            android:key="settings_chatting_recall_prompt"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/pref_text_recall_prompt" />
+        <EditTextPreference
+            android:defaultValue="1000"
+            android:inputType="number"
+            android:key="settings_select_photos_limit"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/pref_text_select_photos_limit" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_sns">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="settings_sns_adblock"
+            android:title="@string/pref_toggle_sns_adblock" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="settings_sns_delete_moment"
+            android:title="@string/pref_toggle_prevent_moment_delete" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="settings_sns_delete_comment"
+            android:title="@string/pref_toggle_prevent_comment_delete" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="settings_sns_keyword_blacklist"
+            android:summary="@string/pref_toggle_keyword_blacklist_summary"
+            android:title="@string/pref_toggle_keyword_blacklist" />
+        <EditTextPreference
+            android:dependency="settings_sns_keyword_blacklist"
+            android:key="settings_sns_keyword_blacklist_content"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="@string/pref_list_keyword_blacklist_summary"
+            android:title="@string/pref_list_keyword_blacklist" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_settings_miscellaneous">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="settings_auto_login"
+            android:summary="@string/pref_toggle_auto_login_summary"
+            android:title="@string/pref_toggle_auto_login" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="settings_mark_all_as_read"
+            android:title="@string/pref_toggle_mark_all_as_read" />
+        <com.gh0u1l5.wechatmagician.frontend.widget.PasswordSwitchPreference
+            android:defaultValue="false"
+            android:key="settings_secret_friend"
+            android:title="@string/pref_toggle_secret_friend" />
+        <com.gh0u1l5.wechatmagician.frontend.widget.PasswordPreference
+            android:dependency="settings_secret_friend"
+            android:key="settings_secret_friend_password"
+            android:password="false"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/pref_text_secret_friend_password" />
+        <EditTextPreference
+            android:defaultValue="@string/button_hide_friend"
+            android:dependency="settings_secret_friend"
+            android:key="settings_secret_friend_hide_option"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="@string/pref_text_secret_friend_hide_option_summary"
+            android:title="@string/pref_text_secret_friend_hide_option" />
+    </PreferenceCategory>
+</PreferenceScreen>
